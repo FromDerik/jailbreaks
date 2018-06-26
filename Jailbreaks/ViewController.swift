@@ -70,7 +70,9 @@ class ViewController: UITableViewController {
         DataManager.loadData(url: "https://raw.githubusercontent.com/ca13ra1/jailbreaks/gh-pages/jailbreak.json") { (versions) in
             self.versions = versions
             
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 
