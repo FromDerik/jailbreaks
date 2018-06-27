@@ -13,8 +13,6 @@ struct DataManager {
     static func loadData(url: String, completionHandler: @escaping (JailbreakData) -> Void) {
         guard let url = URL(string: url) else { return }
         
-        //        var allVersions: [Version] = []
-        
         let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print("Failed to fetch Jailbreaks: ", error)
